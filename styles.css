@@ -10,19 +10,34 @@ img{
   width: 100%;
   height: auto;
 }
-/* Navbar Styles */
 
+
+/* Navbar Styling */
 #nav {
   padding: 10px;
-  background-color: white !important;
+  background-color: rgb(255, 255, 255) !important;
 }
+
 .logo img {
   max-width: 150px;
 }
+
+/* Center Navigation */
 .navbar-nav {
   gap: 20px;
 }
 
+.navbar-nav .nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #e65252;
+}
+
+/* Right Icons */
 .nav-img img {
   max-width: 30px;
   margin-left: 10px;
@@ -37,11 +52,13 @@ img{
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  /* Adjust Logo Size */
   .logo img {
     max-width: 120px;
   }
 
+  /* Remove Border on Small Screens */
   .nav-img {
     border: none;
     padding: 4px;
@@ -55,8 +72,42 @@ img{
     max-width: 25px;
   }
 
+  /* Center Align Navbar Items */
   .navbar-collapse {
     text-align: center;
+  }
+
+  /* Move Right Icons Inside Navbar in Mobile View */
+  .nav-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Ensure Right Icons Appear in Toggle Menu */
+  .nav-img img {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  /* Show Right Icons Inside Toggle */
+  .navbar-collapse .nav-img {
+    display: flex !important;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+  .logo img {
+    max-width: 100px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .nav-img img {
+    max-width: 25px;
   }
 }
 
@@ -121,9 +172,6 @@ img{
   }
 }
 @media (max-width:500px) {
-  .input-container {
-    /* flex-direction: column; */
-  }
   .input-search-icon i{
     font-size: 15px !important;
     margin-top: 20px;
@@ -772,6 +820,7 @@ img{
 /* Base Styles for Use Case Section */
 .use-cases-section {
   padding: 5rem 0;
+  position: relative;
 }
 
 .usecase-title {
@@ -823,14 +872,14 @@ img{
 
 .case-card .card-img {
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 10px;
   object-fit: cover;
 }
 
 .card-content h5 {
   font-weight: 600;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .card-content p.meta {
@@ -840,23 +889,26 @@ img{
 }
 
 #arrow-i {
-  font-size: 35px;
+  font-size: 40px;
   color: rgba(230, 82, 82, 1);
+}
+.card-inside-content{
+  display: flex;
+  padding: 10px;
+}
+/* Swiper Styling */
+.swiper {
+  width: 100%;
+  padding: 10px;
 }
 
 .swiper-scrollbar {
   background: #818181 !important;
   height: 7px !important;
   border-radius: 2px !important;
-  width: 30% !important;
+  width: 20% !important;
   position: absolute !important;
   bottom: 0px !important;
-}
-
-.card-inside-content {
-  display: flex;
-  gap: 10px;
-  padding: 30px 0px;
 }
 
 .swiper-scrollbar-drag {
@@ -864,10 +916,8 @@ img{
   height: 100%;
   border-radius: 2px;
 }
-
-.swiper {
-  width: 100%;
-  padding: 10px;
+.swiper-button-next:after, .swiper-button-prev:after {
+  display: none;
 }
 
 /* Responsive Design */
@@ -882,7 +932,11 @@ img{
   }
 
   #arrow-i {
-    font-size: 30px;
+    font-size: 23px;
+  }
+  .card-content h5{
+    font-size: 18px;
+    
   }
 }
 
@@ -890,28 +944,35 @@ img{
   .usecase-title {
     font-size: 20px;
   }
-  hr{
+  
+  hr {
     margin: 0px;
   }
-  #arrow-i {
-    font-size: 14px;
-  }
 
-  .use-case-button {
-    font-size: 10px;
+  #arrow-i {
+    font-size: 20px;
   }
 
   .card-content h5 {
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 400;
   }
-  .card-inside-content{
-    padding: 10px 0px;
+
+  .card-content p.meta {
+    font-size: 10px;
   }
-  .card-content p.meta{
-    font-size: 8px;
+  .use-case-button{
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
   }
 }
+
 
 
 
