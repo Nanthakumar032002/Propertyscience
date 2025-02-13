@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo Section -->
         <a class="navbar-brand logo" href="#">
@@ -143,6 +143,7 @@
       </div>
     </div>
   </div>
+  <div class="swiper-"></div>
 </section>
 <div class="container" id="data-visual-page">
   <h1 class="visual-heading">Data Visualization</h1>
@@ -454,13 +455,18 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const toggler = document.getElementById("customNavbarToggler");
-    const navbarMenu = document.getElementById("navbarNav");
+  let navbarToggler = document.getElementById("customNavbarToggler");
+  let navbarCollapse = document.getElementById("navbarNav");
 
-    toggler.addEventListener("click", function () {
-        navbarMenu.classList.toggle("show");
-    });
+  navbarToggler.addEventListener("click", function () {
+      if (navbarCollapse.classList.contains("show")) {
+          navbarCollapse.classList.remove("show");
+      } else {
+          navbarCollapse.classList.add("show");
+      }
+  });
 });
+
 
   var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
